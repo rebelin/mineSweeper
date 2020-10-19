@@ -31,10 +31,12 @@ class Grid:
       y = random.randint(0, self.height-1)
       if self.board[x][y].hasBomb == True:
         i-=1
-      self.board[x][y].setBomb()
-      neighbors = self.getNeighbors(self.getTile(x,y))
-      for tile in neighbors:
-        tile.bombsNearby += 1
+      else:
+        #print("Mine i:", i, " is at ",x,y)
+        self.board[x][y].setBomb()
+        neighbors = self.getNeighbors(self.getTile(x,y))
+        for tile in neighbors:
+          tile.bombsNearby += 1
 
   def getTile(self, x, y):
     return self.board[x][y]
@@ -55,23 +57,40 @@ class Grid:
     """
 
     if currentX > 0: #Left neighbors
-      neighbors.append(self.getTile(currentX-1, currentY))
+      tile = self.getTile(currentX-1, currentY)
+      if not tile.hasBeenSeen(): 
+        neighbors.append(tile)
       if currentY > 0: #UpLeft
-        neighbors.append(self.getTile(currentX-1, currentY-1))
+        tile = self.getTile(currentX-1, currentY-1)
+        if not tile.hasBeenSeen(): 
+          neighbors.append(tile)
       if currentY < self.height-1: #DownLeft
-        neighbors.append(self.getTile(currentX-1, currentY+1))
+        tile = self.getTile(currentX-1, currentY+1)
+        if not tile.hasBeenSeen(): 
+          neighbors.append(tile)
 
     if currentX < self.width-1: #Right neighbors
-      neighbors.append(self.getTile(currentX+1, currentY))
+      tile = self.getTile(currentX+1, currentY)
+      if not tile.hasBeenSeen(): 
+        neighbors.append(tile)
+        
       if currentY > 0: #UpLeft
-        neighbors.append(self.getTile(currentX+1, currentY-1))
+        tile = self.getTile(currentX+1, currentY-1)
+        if not tile.hasBeenSeen(): 
+          neighbors.append(tile)
       if currentY < self.height-1: #DownLeft
-        neighbors.append(self.getTile(currentX+1, currentY+1))
+        tile = self.getTile(currentX+1, currentY+1)
+        if not tile.hasBeenSeen(): 
+          neighbors.append(tile)
 
     if currentY > 0: #Up
-      neighbors.append(self.getTile(currentX, currentY-1))
+      tile = self.getTile(currentX, currentY-1)
+      if not tile.hasBeenSeen(): 
+        neighbors.append(tile)
     if currentY < self.height-1: #Down
-      neighbors.append(self.getTile(currentX, currentY+1))
+      tile = self.getTile(currentX, currentY+1)
+      if not tile.hasBeenSeen(): 
+        neighbors.append(tile)
 
     return neighbors
 #end grid

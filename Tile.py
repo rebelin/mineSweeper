@@ -5,6 +5,7 @@ class Tile():
   originY = 0
   hasBomb = False
   seen = False
+  flag = False
   bombsNearby = 0
 
   def __init__(self, x, y):
@@ -57,6 +58,12 @@ class Tile():
     
   def hasBeenSeen(self) -> bool:     
 	  return self.seen
+
+  def hasFlag(self):
+    return self.flag
+  
+  def setFlag(self, TF):
+    self.flag = TF
 
   def getBombsNearby(self):
     return self.bombsNearby
