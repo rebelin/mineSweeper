@@ -1,6 +1,8 @@
 ## Mine Sweeper Simulation
 A python program that simulates the classic game of Mine Sweeper, using the pygame library. There are three levels of difficulty, which change the dimensions of the game board display. 
 
+![](main screen.png)
+
 This was a group project created by Rebecca Lin, Peter Marion, Cynthia To, and Vaughn Wenner for OwlHacks 2020.
 
 ### Setup
