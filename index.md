@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+## Mine Sweeper Simulation
+A python program that simulates the classic game of Mine Sweeper, using the pygame library. There are three levels of difficulty, which change the dimensions of the game board display. 
 
-You can use the [editor on GitHub](https://github.com/rebelin/mineSweeper/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This was a group project created by Rebecca Lin, Peter Marion, Cynthia To, and Vaughn Wenner for OwlHacks 2020.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Setup
+Install pygame
 
-### Markdown
+`python3 -m pip install pygame`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The command above may not work for MAC OS, so instead try:
 
-```markdown
-Syntax highlighted code block
+`python3 -m pip install -U pygame--2.0.0.dev12 --user`
 
-# Header 1
-## Header 2
-### Header 3
+### Contributers/Teammates
+Rebecca Lin, Peter Marion, Cynthia To, Vaughn Wenner
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rebelin/mineSweeper/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
